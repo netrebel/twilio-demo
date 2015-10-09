@@ -1,0 +1,36 @@
+apply plugin: 'war'
+apply plugin: 'idea' // IntelliJ
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile('junit:junit:4.11')
+
+    compile "org.glassfish.jersey.containers:jersey-container-servlet-core:2.17"
+    compile("org.glassfish.hk2:guice-bridge:2.4.0-b22")
+    compile('com.google.inject:guice:4.0')
+    compile('com.google.inject.extensions:guice-servlet:4.0')
+    compile('com.google.guava:guava:18.0')
+
+    //Jackson JAX-RS Providers has handlers to add dataformat support for JAX-RS implementations (Jersey)
+    //Providers implement JAX-RS MessageBodyReader and MessageBodyWriter handlers for specific data formats
+    compile('com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.3')
+
+    //To use Jackson 2.x as your JSON provider
+    compile('org.glassfish.jersey.media:jersey-media-json-jackson:2.17')
+
+    compile ('com.twilio.sdk:twilio-java-sdk:3.4.5')
+
+}
+
+idea.module {
+    // Set gradle output directories in IntelliJ
+    inheritOutputDirs = false
+    outputDir = file('build/classes/main')
+    testOutputDir = file('build/classes/test')
+}
