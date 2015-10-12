@@ -1,5 +1,7 @@
 package com.demo;
 
+import com.demo.services.DemoService;
+import com.demo.services.DemoServiceImpl;
 import com.demo.services.TwilioService;
 import com.demo.services.TwilioServiceImpl;
 import com.google.inject.AbstractModule;
@@ -16,5 +18,6 @@ public class Bootstrap extends AbstractModule {
     @Override
     protected void configure() {
         bind(TwilioService.class).to(TwilioServiceImpl.class).in(Singleton.class);
+        bind(DemoService.class).to(DemoServiceImpl.class).in(Singleton.class);
     }
 }

@@ -1,10 +1,12 @@
 package com.demo.resources;
 
 import com.demo.models.Response;
+import com.demo.services.DemoService;
 import com.demo.services.TwilioService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -18,12 +20,22 @@ import javax.ws.rs.core.MediaType;
 public class DemoResource {
 
     @Inject
+    private DemoService demoService;
+
+    @Inject
     private TwilioService twilioService;
 
     @Path("/welcome")
     @GET
     @Produces(MediaType.TEXT_XML)
     public Response welcome() {
-        return twilioService.welcome();
+        return demoService.welcome();
+    }
+
+
+    @Path("makeCall")
+    @POST
+    public void makeCall(){
+        twilioService.makeCall();
     }
 }
