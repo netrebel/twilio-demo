@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlValue;
  *         Date: 10/11/15
  *         Time: 12:51 PM
  */
-public class Say {
+public class TwimlSay {
 
     @XmlAttribute(name = "voice")
     private String voice;

@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @XmlRootElement(name = "Response")
-public class Response {
+public class TwimlResponse {
 
     @XmlElement(name = "Say")
-    private Say say;
+    private TwimlSay say;
 
-    public void setSay(Say say) {
+    public void setSay(TwimlSay say) {
         this.say = say;
     }
 

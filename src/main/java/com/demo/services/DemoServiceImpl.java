@@ -1,7 +1,7 @@
 package com.demo.services;
 
-import com.demo.models.Response;
-import com.demo.models.Say;
+import com.demo.models.TwimlResponse;
+import com.demo.models.TwimlSay;
 
 import javax.inject.Singleton;
 
@@ -14,12 +14,12 @@ import javax.inject.Singleton;
 public class DemoServiceImpl implements DemoService {
 
     @Override
-    public Response welcome() {
-        Say say = new Say();
+    public TwimlResponse welcome() {
+        TwimlSay say = new TwimlSay();
         say.setText("Hi, here I will read reddit's page.");
         say.setVoice("alice");
 
-        Response response = new Response();
+        TwimlResponse response = new TwimlResponse();
         response.setSay(say);
         return response;
     }

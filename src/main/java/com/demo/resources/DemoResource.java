@@ -1,6 +1,6 @@
 package com.demo.resources;
 
-import com.demo.models.Response;
+import com.demo.models.TwimlResponse;
 import com.demo.services.DemoService;
 import com.demo.services.TwilioService;
 
@@ -28,7 +28,7 @@ public class DemoResource {
     @Path("/welcome")
     @GET
     @Produces(MediaType.TEXT_XML)
-    public Response welcome() {
+    public TwimlResponse welcome() {
         return demoService.welcome();
     }
 

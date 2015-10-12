@@ -1,6 +1,6 @@
 package com.demo.services;
 
-import com.demo.models.Response;
+import com.demo.models.TwimlResponse;
 
 /**
  * @author Miguel Reyes
@@ -9,6 +9,6 @@ import com.demo.models.Response;
  */
 public interface DemoService {
 
-    Response welcome();
+    TwimlResponse welcome();
 
 }
