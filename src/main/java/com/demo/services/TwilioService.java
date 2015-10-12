@@ -1,6 +1,6 @@
 package com.demo.services;
 
-import com.demo.models.WelcomeResponse;
+import com.demo.models.Response;
 
 /**
  * @author Miguel Reyes
@@ -8,5 +8,5 @@ import com.demo.models.WelcomeResponse;
  *         Time: 3:39 PM
  */
 public interface TwilioService {
-    WelcomeResponse welcome();
+    Response welcome();
 }

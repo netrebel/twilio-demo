@@ -1,6 +1,6 @@
 package com.demo.resources;
 
-import com.demo.models.WelcomeResponse;
+import com.demo.models.Response;
 import com.demo.services.TwilioService;
 
 import javax.inject.Inject;
@@ -22,9 +22,8 @@ public class DemoResource {
 
     @Path("/welcome")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public WelcomeResponse welcome() {
+    @Produces(MediaType.TEXT_XML)
+    public Response welcome() {
         return twilioService.welcome();
     }
-
 }

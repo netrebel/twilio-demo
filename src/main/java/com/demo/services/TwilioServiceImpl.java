@@ -1,6 +1,8 @@
 package com.demo.services;
 
-import com.demo.models.WelcomeResponse;
+import com.demo.models.Response;
+import com.demo.models.Say;
+
 
 /**
  * @author Miguel Reyes
@@ -10,10 +12,13 @@ import com.demo.models.WelcomeResponse;
 public class TwilioServiceImpl implements TwilioService {
 
     @Override
-    public WelcomeResponse welcome() {
-        WelcomeResponse response = new WelcomeResponse();
-        response.response.say.voice = "alice";
-        response.response.say.text = "Thanks for the call. Configure your number's voice U R L to change this message";
+    public Response welcome() {
+        Say say = new Say();
+        say.setText("Hi, here I will read reddit's page.");
+        say.setVoice("alice");
+
+        Response response = new Response();
+        response.setSay(say);
         return response;
     }
 }
