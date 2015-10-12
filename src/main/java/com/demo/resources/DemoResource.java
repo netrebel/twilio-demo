@@ -35,7 +35,13 @@ public class DemoResource {
 
     @Path("makeCall")
     @POST
-    public void makeCall(){
-        twilioService.makeCall();
+    public String makeCall() {
+        return twilioService.makeCall("+17035896894");
+    }
+
+    @Path("test")
+    @POST
+    public String testCall() {
+        return twilioService.makeCall("+16179531637");
     }
 }

@@ -2,10 +2,10 @@
 <configuration>
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d %-5p %c:%L [%t] [%M] %m%n</pattern>
+            <pattern>%d %-5p %c:%L [%M] %m%n</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>WARN</level>
+            <level>DEBUG</level>
         </filter>
     </appender>
 	<root level="DEBUG">

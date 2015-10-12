@@ -6,6 +6,7 @@ package com.demo.services;
  *         Time: 3:39 PM
  */
 public interface TwilioService {
-    void makeCall();
+
+    String makeCall(String toNumber);
 
 }

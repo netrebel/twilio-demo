@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,20 +33,26 @@ public class TwilioServiceImpl implements TwilioService {
         client = new TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN);
     }
 
-    public void makeCall() {
+    public String makeCall(String toNumber) {
 
+        String sid = "";
         // Build a filter for the CallList
         List<NameValuePair> params = new ArrayList<>();
         params.add(new BasicNameValuePair("Url", "http://ec2-54-236-190-91.compute-1.amazonaws.com:8080/twilio-demo-1.0/api/twilio/welcome"));
         params.add(new BasicNameValuePair("From", "+16175130992"));
-        params.add(new BasicNameValuePair("To", "+17035896894"));
+        params.add(new BasicNameValuePair("To", toNumber));
 
         CallFactory callFactory = client.getAccount().getCallFactory();
         try {
             Call call = callFactory.create(params);
-            LOG.debug("Call made successfully {} at {}", call.getSid(), LocalDate.now());
+            if (call != null) {
+                sid = call.getSid();
+                LOG.debug("Call made successfully [{}] at {}", sid, LocalDateTime.now());
+            }
         } catch (TwilioRestException e) {
             LOG.error("Error making the call.", e);
+            return "Error making the call: " + e.getMessage();
         }
+        return sid;
     }
 }

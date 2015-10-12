@@ -26,8 +26,8 @@ public class Example {
 
         // Build a filter for the CallList
         List<NameValuePair> params = new ArrayList<>();
-        params.add(new BasicNameValuePair("Url", "http://ec2-52-91-206-115.compute-1.amazonaws.com:8080/twilio-demo-1.0/api/twilio/welcome"));
-//        params.add(new BasicNameValuePair("Url", "http://ec2-52-91-206-115.compute-1.amazonaws.com:8080/twilio-demo-1.0/sample.xml"));
+        params.add(new BasicNameValuePair("Url", "http://ec2-54-236-190-91.compute-1.amazonaws.com:8080/twilio-demo-1.0/api/twilio/welcome"));
+//        params.add(new BasicNameValuePair("Url", "http://ec2-54-236-190-91.compute-1.amazonaws.com:8080/twilio-demo-1.0/sample.xml"));
         params.add(new BasicNameValuePair("To", "+16179531637"));
         params.add(new BasicNameValuePair("From", "+16175130992"));
 
