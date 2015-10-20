@@ -1,7 +1,9 @@
 package com.demo.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * @author Miguel Reyes
@@ -17,6 +19,23 @@ public class TwimlResponse {
 
     public void setSay(TwimlSay say) {
         this.say = say;
+    }
+
+    public static class TwimlSay {
+
+        @XmlAttribute(name = "voice")
+        private String voice;
+
+        @XmlValue
+        private String text;
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public void setVoice(String voice) {
+            this.voice = voice;
+        }
     }
 
 }
